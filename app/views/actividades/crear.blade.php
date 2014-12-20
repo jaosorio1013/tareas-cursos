@@ -19,10 +19,10 @@
         </div>
 
         <div class="form-group">
-            <label for="">Cuando</label>
+            <label for="">Cuando (Ejem: 2014/12/20 12:05:10)</label>
             <div class="input-append date">
                 {{--<input data-format="yyyy/MM/dd hh:mm:ss" type="text" name="cuando" class="form-control" />--}}
-                {{ Form::text('cuando', null, array('data-format' => 'yyyy/MM/dd hh:mm:ss', 'class' => 'form-control datepicker')) }}
+                {{ Form::text('cuando', null, array('data-format' => 'yyyy/MM/dd hh:mm:ss', 'class' => 'form-control datepicker',)) }}
             </div>
         </div>
 

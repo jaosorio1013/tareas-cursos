@@ -94,11 +94,11 @@
 <script src="{{ asset('datetime/script.js') }}"></script>
 
 <script type="text/javascript">
-    $(function() {
+    /*$(function() {
         $('.datepicker').datetimepicker({
             language: 'pt-BR'
         });
-    });
+    });*/
 </script>
 </body>
 </html>
