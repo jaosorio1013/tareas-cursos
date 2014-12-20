@@ -1,55 +1,52 @@
-<h1>Crear actividad</h1>
-
-{{ Form::open(['route' => ['crear_actividad', $idTarea], 'method' => 'POST', 'role' => 'form', 'novalidate']) }}
-    <p>
-        <label for="">Equipo</label>
-        <select name="equipo" id="">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-        </select>
-    </p>
-
-    <p>
-        <label for="">Quíen</label>
-        <select name="quien" id="">
-            <option value="Victor">Victor</option>
-            <option value="Sandra">Sandra</option>
-            <option value="Diego">Diego</option>
-            <option value="Silvana">Silvana</option>
-            <option value="Jeff">Jeff</option>
-        </select>
-    </p>
-
-    <p>
-        <label for="">Cuando</label>
-        <input type="text" name="cuando"/>
-    </p>
-
-    <p>
-        <label for="">Cuanto</label>
-        <input type="text" name="cuanto"/>
-    </p>
-
-    <p>
-        <label for="">Estado</label>
-        <select name="estado" id="">
-            <option value="Sin iniciar">Sin iniciar</option>
-            <option value="Investigación">Investigación</option>
-            <option value="Guión">Guión</option>
-            <option value="Grabación">Grabación</option>
-            <option value="Edición">Edición</option>
-            <option value="Correcciones">Correcciones</option>
-            <option value="Finalización">Finalización</option>
-        </select>
-    </p>
-
-    <p>
-        <input type="submit" value="Crear actividad"/>
-    </p>
-{{ Form::close() }}
+@extends('layout')
 
 
-<p>
-    <a href="{{ route('tareas') }}">Ver tareas</a>
-</p>
+@section('content')
+    <div class="container">
+        <h1>Crear actividad</h1>
+
+        {{ Form::open(['route' => ['crear_actividad', $idTarea], 'method' => 'POST', 'role' => 'form', 'novalidate']) }}
+        <div class="form-group">
+            <label for="">Equipo</label>
+            {{ Form::select('equipo', ['1' => '1', '2' => '2', '3' => '3'], null, array('class' => 'form-control')) }}
+        </div>
+
+        <div class="form-group">
+            <label for="">Quíen</label>
+            {{ Form::select('quien', ['Victor' => 'Victor', 'Sandra' => 'Sandra',
+                'Diego' => 'Diego', 'Silvana' => 'Silvana', 'Jeff' => 'Jeff'],
+                null, array('class' => 'form-control')) }}
+        </div>
+
+        <div class="form-group">
+            <label for="">Cuando</label>
+            <div class="input-append date">
+                {{--<input data-format="yyyy/MM/dd hh:mm:ss" type="text" name="cuando" class="form-control" />--}}
+                {{ Form::text('cuando', null, array('data-format' => 'yyyy/MM/dd hh:mm:ss', 'class' => 'form-control datepicker')) }}
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="">Cuanto</label>
+            {{ Form::text('cuanto', null, array('class' => 'form-control')) }}
+        </div>
+
+        <div class="form-group">
+            <label for="">Estado</label>
+            {{ Form::select('estado', ['Sin iniciar' => 'Sin iniciar', 'Investigación' => 'Investigación',
+                'Guión' => 'Guión', 'Grabación' => 'Grabación', 'Edición' => 'Edición',
+                'Correcciones' => 'Correcciones', 'Finalización' => 'Finalización'],
+                null, array('class' => 'form-control')) }}
+        </div>
+
+        <div class="form-group">
+            <input type="submit" class="btn btn-success" value="Crear actividad"/>
+        </div>
+        {{ Form::close() }}
+
+
+        <p>
+            <a href="{{ route('tareas') }}">Ver tareas</a>
+        </p>
+    </div>
+@stop
