@@ -10,7 +10,7 @@
             </div>
         @endif
 
-        {{ Form::model($curso, ['route' => ['actualizar_actividad', $curso->id], 'method' => 'PUT', 'role' => 'form', 'novalidate']) }}
+        {{ Form::model($curso, ['route' => ['actualizar_curso', $curso->id], 'method' => 'PUT', 'role' => 'form', 'novalidate']) }}
 
         @include('cursos/formulario')
 

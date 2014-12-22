@@ -15,7 +15,7 @@ class ActividadesTableSeeder extends Seeder {
 		{
 			foreach(range(1, 10) as $index)
 			{
-				Actividade::create([
+				Actividad::create([
 					'equipo' => $faker->randomElement([1, 2, 3]),
 					'quien' => $faker->randomElement(['Victor', 'Sandra', 'Diego']),
 					'cuando' => $faker->dateTime(),

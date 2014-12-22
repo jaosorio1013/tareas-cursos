@@ -1,5 +1,16 @@
 <?php
 
+Route::get('cursos', ['as' => 'cursos', 'uses' => 'CursosController@listar']);
+Route::get('cursos/crear', ['as' => 'crear_curso', 'uses' => 'CursosController@formularioCrear']);
+Route::post('cursos/crear/', ['as' => 'crear_curso', 'uses' => 'CursosController@crear']);
+Route::get('cursos/actualizar/{id}', ['as' => 'actualizar_curso', 'uses' => 'CursosController@formularioActualizar']);
+Route::put('cursos/actualizar/{id}', ['as' => 'actualizar_curso', 'uses' => 'CursosController@actualizar']);
+
+Route::get('sprints/{idTarea}', ['as' => 'sprints_curso', 'uses' => 'ActividadesController@listar']);
+Route::get('sprints/crear/{idTarea}', ['as' => 'crear_actividad', 'uses' => 'ActividadesController@formularioCrear']);
+Route::post('sprints/crear/{idTarea}', ['as' => 'crear_actividad', 'uses' => 'ActividadesController@crear']);
+Route::get('sprints/actualizar/{id}', ['as' => 'actualizar_actividad', 'uses' => 'ActividadesController@formularioActualizar']);
+Route::put('sprints/actualizar/{id}', ['as' => 'actualizar_actividad', 'uses' => 'ActividadesController@actualizar']);
 
 Route::get('tareas', ['as' => 'tareas', 'uses' => 'TareasController@listar']);
 Route::get('tareas/crear', ['as' => 'crear_tarea', 'uses' => 'TareasController@formularioCrear']);

@@ -9,7 +9,7 @@ class SprintsTableSeeder extends Seeder {
 	{
 		$faker = Faker::create();
 
-		$cursos = Cursos::all();
+		$cursos = Curso::all();
 
 		foreach($cursos AS $curso)
 		{

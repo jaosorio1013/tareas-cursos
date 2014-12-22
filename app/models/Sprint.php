@@ -7,4 +7,10 @@ class Sprint extends \Eloquent {
 	{
 		return $this->hasMany('Tarea');
 	}
+
+	public function curso()
+	{
+		return $this->belongsTo('Curso');
+	}
+
 }

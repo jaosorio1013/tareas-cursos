@@ -22,8 +22,8 @@
                 <tr>
                     <td>{{ $tarea->prioridad }}</td>
                     <td><a href="{{ route('actualizar_tarea', [$tarea->id]) }}">{{ $tarea->titulo }}</a></td>
-                    <td>{{ $tarea->curso }}</td>
-                    <td>{{ $tarea->sprint }}</td>
+                    <td>{{ $tarea->sprint->curso->nombre }}</td>
+                    <td>{{ $tarea->sprint->numero }}</td>
                     <td><a href="{{ route('actividades_tarea', [$tarea->id]) }}">Ver</a></td>
                     <td><a href="{{ route('crear_actividad', [$tarea->id]) }}">Crear</a></td>
                 </tr>

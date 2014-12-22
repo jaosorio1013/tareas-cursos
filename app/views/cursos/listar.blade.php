@@ -6,7 +6,7 @@
         <h1>Listado cursos</h1>
 
         <p>
-            <a href="{{ route('crear_sprint', [$idTarea]) }}">Crear curso</a>
+            <a href="{{ route('crear_curso') }}">Crear curso</a>
         </p>
 
         <table class="table table-striped">
@@ -18,11 +18,11 @@
             </tr>
             </thead>
             <tbody>
-            @foreach($sprints AS $sprint)
+            @foreach($cursos AS $curso)
                 <tr>
-                    <td>{{ $curso->nombre}}</td>
+                    <td>{{ $curso->nombre }}</td>
                     <td><a href="{{ route('actualizar_curso', $curso->id) }}">Editar</a></td>
-                    <td><a href="{{ route('sprints', $curso->id) }}">Sprints</a></td>
+                    <td><a href="{{ route('sprints_curso', $curso->id) }}">Sprints</a></td>
                 </tr>
             @endforeach
             </tbody>
