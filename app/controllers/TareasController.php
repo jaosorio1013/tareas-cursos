@@ -9,6 +9,13 @@ class TareasController extends BaseController {
 		return View::make('tareas/listar', compact('tareas', 'sprint'));
 	}
 
+	public function listarPorCurso($idCurso)
+	{
+		$tareas = Tarea::where('curso_id', $idCurso)->get();
+		$curso = Curso::find($idCurso);
+		return View::make('tareas/listar', compact('tareas', 'curso'));
+	}
+
 	public function listarTodo()
 	{
 		$tareas = Tarea::all();

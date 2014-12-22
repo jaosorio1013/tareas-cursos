@@ -1,7 +1,7 @@
 <?php
 
 class Sprint extends \Eloquent {
-	protected $fillable = [];
+	protected $fillable = ['numero', 'fecha_inicio', 'fecha_final'];
 
 	public function tareas()
 	{

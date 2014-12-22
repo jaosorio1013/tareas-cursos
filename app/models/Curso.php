@@ -1,7 +1,7 @@
 <?php
 
 class Curso extends \Eloquent {
-	protected $fillable = [];
+	protected $fillable = ['nombre'];
 
 	public function tareas()
 	{

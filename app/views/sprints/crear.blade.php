@@ -3,9 +3,9 @@
 
 @section('content')
     <div class="container">
-        <h1>Crear sprint ({{ $curso->nombre }})</h1>
+        <h1>Crear sprint</h1>
 
-        {{ Form::open(['route' => ['crear_sprint', $curso->id], 'method' => 'POST', 'role' => 'form', 'novalidate']) }}
+        {{ Form::open(['route' => ['crear_sprint'], 'method' => 'POST', 'role' => 'form', 'novalidate']) }}
 
         @include('sprints/formulario')
 
@@ -15,8 +15,7 @@
         {{ Form::close() }}
 
         <p>
-            <a href="{{ route('sprints_curso', $curso->id) }}" class="btn btn-danger">Volver</a>
-            <a href="{{ route('cursos') }}" class="btn btn-default">Ver cursos</a>
+            <a href="{{ route('sprints') }}" class="btn btn-danger">Volver</a>
         </p>
     </div>
 @stop

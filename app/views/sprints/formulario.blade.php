@@ -22,8 +22,3 @@
         </div>
     </div>
 </div>
-
-<div class="form-group">
-    <label for="">Estado</label>
-    {{ Form::select('estado', $cursos, null, array('class' => 'form-control')) }}
-</div>

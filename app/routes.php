@@ -16,7 +16,7 @@ Route::put('sprints/actualizar/{id}', ['as' => 'actualizar_sprint', 'uses' => 'S
 
 Route::get('tareas', ['as' => 'tareas', 'uses' => 'TareasController@listarTodo']);
 Route::get('tareas/sprint/{idSprint}', ['as' => 'tareas_sprint', 'uses' => 'TareasController@listarPorSprint']);
-Route::get('tareas/curso/{idCurso}', ['as' => 'tareas_sprint', 'uses' => 'TareasController@listarPorCurso']);
+Route::get('tareas/curso/{idCurso}', ['as' => 'tareas_curso', 'uses' => 'TareasController@listarPorCurso']);
 Route::get('tareas/crear', ['as' => 'crear_tarea', 'uses' => 'TareasController@formularioCrear']);
 Route::post('tareas/crear', ['as' => 'crear_tarea', 'uses' => 'TareasController@crear']);
 Route::get('tareas/actualizar/{id}', ['as' => 'actualizar_tarea', 'uses' => 'TareasController@formularioActualizar']);
