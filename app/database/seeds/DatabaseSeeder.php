@@ -11,7 +11,10 @@ class DatabaseSeeder extends Seeder {
 	{
 		Eloquent::unguard();
 
+		$this->call('CursosSeeder');
+		$this->call('SprintsSeeder');
 		$this->call('TareasSeeder');
+		$this->call('ActividadesSeeder');
 	}
 
 }

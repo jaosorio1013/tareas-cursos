@@ -6,15 +6,21 @@ class TareasSeeder extends Seeder {
 	public function run()
 	{
 		$faker = Faker::create();
-		foreach(range(1, 80) as $index)
+
+		$sprints = Sprint::all();
+
+		foreach($sprints AS $sprint)
 		{
-			Tarea::create([
-				'prioridad' => $faker->randomElement([1, 2, 3]),
-				'titulo' => $faker->name,
-				'curso' => $faker->name,
-				'sprint' => $index,
-				'horas_esperadas' => $faker->randomElement([1, 2, 3]),
-			]);
+			foreach(range(1, 10) as $index)
+			{
+				Tarea::create([
+					'prioridad' => $faker->randomElement([1, 2, 3, 4, 5]),
+					'titulo' => $faker->name,
+					//'curso' => $faker->name,
+					'sprint_id' => $sprint->id,
+					'horas_esperadas' => $faker->randomElement([1, 2, 3, 4]),
+				]);
+			}
 		}
 	}
 }

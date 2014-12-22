@@ -35,7 +35,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Tareas Cocina</a>
+            <a class="navbar-brand" href="{{ route('tareas') }}">Tareas Cocina</a>
         </div>
         <div class="navbar-collapse collapse">
         {{--@if (Auth::check())

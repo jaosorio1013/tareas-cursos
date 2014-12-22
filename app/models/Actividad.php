@@ -6,7 +6,7 @@ class Actividad extends \Eloquent {
 	protected $perPage = 8;
 	protected $table = 'actividades';
 
-	public function category()
+	public function tarea()
 	{
 		return $this->belongsTo('Tarea');
 	}

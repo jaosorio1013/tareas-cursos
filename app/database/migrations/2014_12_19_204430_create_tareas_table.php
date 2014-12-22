@@ -18,9 +18,11 @@ class CreateTareasTable extends Migration {
 
 			$table->integer('prioridad');
 			$table->string('titulo');
-			$table->string('curso');
-			$table->integer('sprint');
+			$table->integer('tiempo_locucion');
+			$table->integer('tiempo_real');
 			$table->float('horas_esperadas');
+			//$table->integer('curso_id');
+			$table->integer('sprint_id');
 
 			$table->timestamps();
 		});
@@ -33,7 +35,7 @@ class CreateTareasTable extends Migration {
 	 */
 	public function down()
 	{
-		//
+		Schema::drop('tareas');
 	}
 
 }

@@ -1,6 +1,19 @@
 <?php
 
-Route::get('/', function(){
+
+Route::get('tareas', ['as' => 'tareas', 'uses' => 'TareasController@listar']);
+Route::get('tareas/crear', ['as' => 'crear_tarea', 'uses' => 'TareasController@formularioCrear']);
+Route::post('tareas/crear/', ['as' => 'crear_tarea', 'uses' => 'TareasController@crear']);
+Route::get('tareas/actualizar/{id}', ['as' => 'actualizar_tarea', 'uses' => 'TareasController@formularioActualizar']);
+Route::put('tareas/actualizar/{id}', ['as' => 'actualizar_tarea', 'uses' => 'TareasController@actualizar']);
+
+Route::get('actividades/{idTarea}', ['as' => 'actividades_tarea', 'uses' => 'ActividadesController@listar']);
+Route::get('actividades/crear/{idTarea}', ['as' => 'crear_actividad', 'uses' => 'ActividadesController@formularioCrear']);
+Route::post('actividades/crear/{idTarea}', ['as' => 'crear_actividad', 'uses' => 'ActividadesController@crear']);
+Route::get('actividades/actualizar/{id}', ['as' => 'actualizar_actividad', 'uses' => 'ActividadesController@formularioActualizar']);
+Route::put('actividades/actualizar/{id}', ['as' => 'actualizar_actividad', 'uses' => 'ActividadesController@actualizar']);
+
+/*Route::get('/', function(){
 	return Redirect::to('tareas');
 });
 
@@ -38,4 +51,4 @@ Route::get('admin/crear-sprint', ['as' => 'admin_formulario_crear_sprint', 'uses
 Route::post('admin/crear-sprint', ['as' => 'admin_crear_sprint', 'uses' => 'AdminController@crearSprint']);
 
 Route::get('admin/actualizar-sprint/{id}', ['as' => 'admin_formulario_actualizar_sprint', 'uses' => 'AdminController@mostrarFormularioActializarSprint']);
-Route::put('admin/actualizar-sprint/{id}', ['as' => 'admin_actualizar_sprint', 'uses' => 'AdminController@actualizarSprint']);
+Route::put('admin/actualizar-sprint/{id}', ['as' => 'admin_actualizar_sprint', 'uses' => 'AdminController@actualizarSprint']);*/
