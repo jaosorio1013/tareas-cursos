@@ -9,6 +9,13 @@ class GeneralController extends BaseController {
 		return View::make('tareas', compact('tareas'));
 	}
 
+	public function sprints()
+	{
+		$sprints = Sprint::all();
+
+		return View::make('sprints', compact('sprints'));
+	}
+
 	public function actividades($idTarea)
 	{
 		$actividades = Actividad::where('tarea_id', '=', $idTarea)->get();

@@ -14,9 +14,8 @@
     <link href="{{ asset('bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link rel="stylesheet" type="text/css" media="screen"
-          href="http://tarruda.github.com/bootstrap-datetimepicker/assets/css/bootstrap-datetimepicker.min.css">
     <link href="{{ asset('style.css') }}" rel="stylesheet">
+    <link href="{{ asset('datetime/style.css') }}" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -92,13 +91,16 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="{{ asset('bootstrap/js/bootstrap.min.js') }}"></script>
 <script src="{{ asset('datetime/script.js') }}"></script>
+<script src="{{ asset('datetime/lang.js') }}"></script>
 
 <script type="text/javascript">
-    /*$(function() {
-        $('.datepicker').datetimepicker({
-            language: 'pt-BR'
-        });
-    });*/
+    $('.form_datetime').datetimepicker({
+        language:  'es',
+        format: 'yyyy/mm/dd hh:mm:ss',
+        todayBtn:  1,
+        autoclose: 1,
+        pickerPosition: "bottom-left"
+    });
 </script>
 </body>
 </html>

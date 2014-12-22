@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateCursosTable extends Migration {
+class AddSprintIdTotareasTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,13 +12,11 @@ class CreateCursosTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('cursos', function(Blueprint $table)
+		Schema::table('tareas', function(Blueprint $table)
 		{
-			$table->increments('id');
+			$table->integer('sprint_id');
+			$table->integer('curso_id');
 
-			$table->string('nombre');
-
-			$table->timestamps();
 		});
 	}
 
@@ -30,7 +28,10 @@ class CreateCursosTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('cursos');
+		Schema::table('sprint_id_totareas', function(Blueprint $table)
+		{
+			
+		});
 	}
 
 }

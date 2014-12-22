@@ -10,4 +10,9 @@ class Tarea extends \Eloquent {
 	{
 		return $this->hasMany('Actividad');
 	}
+
+	public function sprint()
+	{
+		return $this->belongsTo('Sprint');
+	}
 }

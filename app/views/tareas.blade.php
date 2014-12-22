@@ -21,7 +21,7 @@
             @foreach($tareas AS $tarea)
                 <tr>
                     <td>{{ $tarea->prioridad }}</td>
-                    <td>{{ $tarea->titulo }}</td>
+                    <td><a href="{{ route('admin_actualizar_tarea', [$tarea->id]) }}">{{ $tarea->titulo }}</a></td>
                     <td>{{ $tarea->curso }}</td>
                     <td>{{ $tarea->sprint }}</td>
                     <td><a href="{{ route('actividades_tarea', [$tarea->id]) }}">Ver</a></td>
