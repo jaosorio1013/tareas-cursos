@@ -21,7 +21,7 @@ class CreateTareasTable extends Migration {
 			$table->integer('tiempo_locucion');
 			$table->integer('tiempo_real');
 			$table->float('horas_esperadas');
-			//$table->integer('curso_id');
+			$table->integer('curso_id');
 			$table->integer('sprint_id');
 
 			$table->timestamps();

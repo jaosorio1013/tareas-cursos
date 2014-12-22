@@ -1,11 +1,11 @@
 <?php
 
 class Curso extends \Eloquent {
-	protected $fillable = ['nombre'];
+	protected $fillable = [];
 
-	public function sprints()
+	public function tareas()
 	{
-		return $this->hasMany('Sprint');
+		return $this->hasMany('Tarea');
 	}
 
 }

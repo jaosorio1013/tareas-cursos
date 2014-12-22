@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <h1>Actualizar sprint ({{ $sprint->curso->nombre }} # {{ $sprint->numero }})</h1>
+        <h1>Actualizar sprint # {{ $sprint->numero }}</h1>
 
         @if(isset($msg))
             <div class="alert alert-success">
@@ -16,13 +16,12 @@
 
         <div class="form-group">
             <input type="submit" class="btn btn-success" value="Actualizar actividad"/>
-            <a href="{{ route('crear_actividad', $sprint->curso->id) }}" class="btn btn-info">Nueva actividad</a>
+            <a href="{{ route('crear_sprint') }}" class="btn btn-info">Nuevo sprint</a>
         </div>
         {{ Form::close() }}
 
         <p>
-            <a href="{{ route('sprints_curso', $sprint->curso->id) }}" class="btn btn-danger">Volver</a>
-            <a href="{{ route('cursos') }}" class="btn btn-default">Ver cursos</a>
+            <a href="{{ route('sprints') }}" class="btn btn-danger">Volver</a>
         </p>
     </div>
 @stop

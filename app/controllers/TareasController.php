@@ -2,7 +2,7 @@
 
 class TareasController extends BaseController {
 
-	public function listar($idSprint)
+	public function listarPorSprint($idSprint)
 	{
 		$tareas = Tarea::where('sprint_id', $idSprint)->get();
 		$sprint = Sprint::find($idSprint);
@@ -11,14 +11,15 @@ class TareasController extends BaseController {
 
 	public function listarTodo()
 	{
-
+		$tareas = Tarea::all();
+		return View::make('tareas/listar-todo', compact('tareas'));
 	}
 
-	public function formularioCrear($idSprint)
+	public function formularioCrear()
 	{
-		$sprint = Sprint::find($idSprint);
-		$sprints = Sprint::where('curso_id', $sprint->curso->id)->lists('numero', 'id');
-		return View::make('tareas/crear', compact('sprints', 'sprint'));
+		$cursos = Curso::lists('nombre', 'id');
+		$sprints = Sprint::lists('numero', 'id');
+		return View::make('tareas/crear', compact('sprints', 'cursos', 'sprints'));
 	}
 
 	public function crear()
@@ -33,8 +34,9 @@ class TareasController extends BaseController {
 	public function formularioActualizar($idTarea)
 	{
 		$tarea = Tarea::find($idTarea);
-		$sprints = Sprint::where('curso_id', $tarea->sprint->curso->id)->lists('numero', 'id');
-		return View::make('tareas/actualizar', compact('tarea', 'sprints'));
+		$cursos = Curso::lists('nombre', 'id');
+		$sprints = Sprint::lists('numero', 'id');
+		return View::make('tareas/actualizar', compact('tarea', 'cursos', 'sprints'));
 	}
 
 	public function actualizar($idTarea)

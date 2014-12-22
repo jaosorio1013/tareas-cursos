@@ -19,7 +19,7 @@ class CreateSprintsTable extends Migration {
 			$table->integer('numero');
 			$table->dateTime('fecha_inicio');
 			$table->dateTime('fecha_final');
-			$table->integer('curso_id');
+			//$table->integer('curso_id');
 
 			$table->timestamps();
 		});

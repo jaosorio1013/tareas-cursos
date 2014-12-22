@@ -15,4 +15,10 @@ class Tarea extends \Eloquent {
 	{
 		return $this->belongsTo('Sprint');
 	}
+
+	public function curso()
+	{
+		return $this->belongsTo('Curso');
+	}
+
 }

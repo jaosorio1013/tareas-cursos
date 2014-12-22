@@ -16,7 +16,7 @@ class TareasSeeder extends Seeder {
 				Tarea::create([
 					'prioridad' => $faker->randomElement([1, 2, 3, 4, 5]),
 					'titulo' => $faker->name,
-					//'curso' => $faker->name,
+					'curso_id' => $faker->randomElement([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]),
 					'sprint_id' => $sprint->id,
 					'horas_esperadas' => $faker->randomElement([1, 2, 3, 4]),
 				]);

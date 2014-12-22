@@ -35,9 +35,21 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="{{ route('tareas') }}">Tareas Cocina</a>
+            <a class="navbar-brand" href="{{ route('home') }}">Tareas Cocina</a>
         </div>
         <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav pull-right">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <span class="icon icon-wh i-profile"></span> Hola  <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{{ route('tareas') }}">Tareas</a></li>
+                        <li><a href="{{ route('cursos') }}">Cursos</a></li>
+                        <li><a href="{{ route('sprints') }}">Sprints</a></li>
+                    </ul>
+                </li>
+            </ul>
         {{--@if (Auth::check())
             <ul class="nav navbar-nav pull-right">
                 <li class="dropdown">

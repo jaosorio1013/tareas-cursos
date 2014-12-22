@@ -14,7 +14,7 @@
             <tr>
                 <th>Nombre</th>
                 <th>Editar</th>
-                <th>Sprints</th>
+                <th>Tareas</th>
             </tr>
             </thead>
             <tbody>
@@ -22,7 +22,7 @@
                 <tr>
                     <td>{{ $curso->nombre }}</td>
                     <td><a href="{{ route('actualizar_curso', $curso->id) }}">Editar</a></td>
-                    <td><a href="{{ route('sprints_curso', $curso->id) }}">Sprints</a></td>
+                    <td><a href="{{ route('tareas_curso', $curso->id) }}">Tareas</a></td>
                 </tr>
             @endforeach
             </tbody>

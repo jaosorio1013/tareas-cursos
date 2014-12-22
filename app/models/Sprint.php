@@ -1,16 +1,11 @@
 <?php
 
 class Sprint extends \Eloquent {
-	protected $fillable = ['numero', 'fecha_inicio', 'fecha_final'];
+	protected $fillable = [];
 
 	public function tareas()
 	{
 		return $this->hasMany('Tarea');
-	}
-
-	public function curso()
-	{
-		return $this->belongsTo('Curso');
 	}
 
 }

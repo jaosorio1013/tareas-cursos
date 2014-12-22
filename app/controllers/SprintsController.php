@@ -2,35 +2,30 @@
 
 class SprintsController extends BaseController {
 
-	public function listar($idCurso)
+	public function listar()
 	{
-		$sprints = Sprint::where('curso_id', $idCurso)->get();
-		$curso = Curso::find($idCurso);
-		return View::make('sprints/listar', compact('sprints', 'curso'));
+		$sprints = Sprint::all();
+		return View::make('sprints/listar', compact('sprints'));
 	}
 
-	public function formularioCrear($idCurso)
+	public function formularioCrear()
 	{
-		$curso = Curso::find($idCurso);
-		$cursos = Curso::lists('nombre', 'id');
-		return View::make('sprints/crear', compact('curso', 'cursos'));
+		return View::make('sprints/crear');
 	}
 
-	public function crear($idCurso)
+	public function crear()
 	{
 		$actividad = new Sprint();
 		$actividad->fill(Input::all());
-		$actividad->curso_id = $idCurso;
 		$actividad->save();
 
-		return Redirect::to('sprints/'.$idCurso);
+		return Redirect::to('sprints');
 	}
 
 	public function formularioActualizar($idSprint)
 	{
 		$sprint = Sprint::find($idSprint);
-		$cursos = Curso::lists('nombre', 'id');
-		return View::make('sprints/actualizar', compact('sprint', 'cursos'));
+		return View::make('sprints/actualizar', compact('sprint'));
 	}
 
 	public function actualizar($idSprint)
@@ -39,7 +34,7 @@ class SprintsController extends BaseController {
 		$sprint->fill(Input::all());
 		$sprint->save();
 
-		return Redirect::to('sprints/'.$sprint->curso->id);
+		return Redirect::to('sprints');
 	}
 
 }

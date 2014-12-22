@@ -30,6 +30,10 @@
 
 <div class="form-group">
     <label for="">Sprint</label>
-    {{--{{ Form::text('sprint', null, array('class' => 'form-control')) }}--}}
-    {{ Form::select('sprint', $sprints, null, array('class' => 'form-control')) }}
+    {{ Form::select('sprint_id', $sprints, null, array('class' => 'form-control')) }}
+</div>
+
+<div class="form-group">
+    <label for="">Curso</label>
+    {{ Form::select('curso_id', $cursos, null, array('class' => 'form-control')) }}
 </div>
