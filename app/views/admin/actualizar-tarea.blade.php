@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <h1>Crear tarea</h1>
+        <h1>Actualizar tarea ({{ $tarea->titulo }})</h1>
 
         @if(isset($msg))
             <div class="alert alert-success">
@@ -10,12 +10,13 @@
             </div>
         @endif
 
-        {{ Form::open(['route' => ['admin_crear_tarea'], 'method' => 'POST', 'role' => 'form', 'novalidate']) }}
+        {{ Form::model($tarea, ['route' => ['admin_actualizar_tarea', $idTarea], 'method' => 'PUT', 'role' => 'form', 'novalidate']) }}
 
         @include('admin/formulario-tareas')
 
         <div class="form-group">
-            <input type="submit" class="btn btn-success" value="Crear tarea"/>
+            <input type="submit" class="btn btn-success" value="Actualizar tarea"/>
+            <a href="{{ route('admin_formulario_crear_tarea') }}" class="btn btn-info">Nueva tarea</a>
         </div>
         {{ Form::close() }}
 

@@ -16,5 +16,8 @@ Route::get('admin', function(){
 	return Redirect::to('admin/crear-tarea');
 });
 
-Route::get('admin/crear-tarea', ['as' => 'admin_formulario_tarea', 'uses' => 'AdminController@formularioTarea']);
+Route::get('admin/crear-tarea', ['as' => 'admin_formulario_crear_tarea', 'uses' => 'AdminController@mostrarFormularioCrearTarea']);
 Route::post('admin/crear-tarea', ['as' => 'admin_crear_tarea', 'uses' => 'AdminController@crearTarea']);
+
+Route::get('admin/actualizar-tarea/{id}', ['as' => 'admin_formulario_actualizar_tarea', 'uses' => 'AdminController@mostrarFormularioActializarTarea']);
+Route::put('admin/actualizar-tarea/{id}', ['as' => 'admin_actualizar_tarea', 'uses' => 'AdminController@actualizarTarea']);

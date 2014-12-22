@@ -2,25 +2,38 @@
 
 class AdminController extends BaseController {
 
-	public function formularioTarea()
+	public function mostrarFormularioCrearTarea()
 	{
 		return View::make('admin/crear-tarea');
 	}
 
+
 	public function crearTarea()
 	{
 		$tarea = new Tarea();
-
-		$tarea->prioridad = Input::get('prioridad');
-		$tarea->titulo = Input::get('titulo');
-		$tarea->curso = Input::get('curso');
-		$tarea->sprint = Input::get('sprint');
-
+		$tarea->fill(Input::all());
 		$tarea->save();
 
 		$msg = 'Se creo la tarea '.$tarea->titulo;
 
 		return View::make('admin/crear-tarea', compact('msg'));
+	}
+
+	public function mostrarFormularioActializarTarea($idTarea)
+	{
+		$tarea = Tarea::find($idTarea);
+		return View::make('admin/actualizar-tarea', compact('tarea', 'idTarea'));
+	}
+
+	public function actualizarTarea($idTarea)
+	{
+		$tarea = Tarea::find($idTarea);
+		$tarea->fill(Input::all());
+		$tarea->save();
+
+		$msg = 'Se actualizo la tarea '.$tarea->titulo;
+
+		return View::make('admin/actualizar-tarea', compact('msg', 'tarea', 'idTarea'));
 	}
 
 }
