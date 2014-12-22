@@ -10,7 +10,7 @@
             </div>
         @endif
 
-        {{ Form::model($sprint, ['route' => ['actualizar_actividad', $sprint->curso->id], 'method' => 'PUT', 'role' => 'form', 'novalidate']) }}
+        {{ Form::model($sprint, ['route' => ['actualizar_sprint', $sprint->id], 'method' => 'PUT', 'role' => 'form', 'novalidate']) }}
 
         @include('sprints/formulario')
 

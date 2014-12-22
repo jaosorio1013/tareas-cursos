@@ -3,8 +3,15 @@
 
 @section('content')
     <div class="container">
-        <h1>Listado de tareas</h1>
+        <h1>Listado de tareas ({{ $sprint->curso->nombre }} # {{ $sprint->numero }})</h1>
 
+        <p>
+            <a href="{{ route('crear_tarea', $sprint->id) }}">Crear tarea</a>
+        </p>
+
+        <p>
+            <a href="{{ route('sprints_curso', $sprint->curso->id) }}">Sprints del curso</a>
+        </p>
 
         <table class="table table-striped">
             <thead>

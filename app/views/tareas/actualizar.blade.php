@@ -21,7 +21,7 @@
         {{ Form::close() }}
 
         <p>
-            <a href="{{ route('tareas') }}" class="btn btn-default">Ver tareas</a>
+            <a href="{{ route('tareas', $tarea->sprint->id) }}" class="btn btn-default">Ver tareas</a>
         </p>
     </div>
 @stop

@@ -3,7 +3,7 @@
 
 @section('content')
     <div class="container">
-        <h1>Crear sprint ({{ $curso->titulo }})</h1>
+        <h1>Crear sprint ({{ $curso->nombre }})</h1>
 
         {{ Form::open(['route' => ['crear_sprint', $curso->id], 'method' => 'POST', 'role' => 'form', 'novalidate']) }}
 

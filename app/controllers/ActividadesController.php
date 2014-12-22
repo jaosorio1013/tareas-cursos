@@ -5,7 +5,8 @@ class ActividadesController extends BaseController {
 	public function listar($idTarea)
 	{
 		$actividades = Actividad::where('tarea_id', $idTarea)->get();
-		return View::make('actividades/listar', compact('actividades', 'idTarea'));
+		$tarea = Tarea::find($idTarea);
+		return View::make('actividades/listar', compact('actividades', 'tarea'));
 	}
 
 	public function formularioCrear($idTarea)

@@ -7,7 +7,7 @@
     <label for="">Fecha inicial</label>
     <div class="input-append date">
         <div class="input-group date form_datetime">
-            {{ Form::text('fecha_inicial', null, array('class' => 'form-control datepicker', 'readonly' => '')) }}
+            {{ Form::text('fecha_inicio', null, array('class' => 'form-control datepicker', 'readonly' => '')) }}
             <span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
         </div>
     </div>
@@ -25,6 +25,5 @@
 
 <div class="form-group">
     <label for="">Estado</label>
-    {{ Form::select('estado', $cursos,
-        null, array('class' => 'form-control')) }}
+    {{ Form::select('estado', $cursos, null, array('class' => 'form-control')) }}
 </div>

@@ -8,10 +8,10 @@
     {{ Form::text('titulo', null, array('class' => 'form-control')) }}
 </div>
 
-<div class="form-group">
+{{--<div class="form-group">
     <label for="">Curso</label>
     {{ Form::text('curso', null, array('class' => 'form-control')) }}
-</div>
+</div>--}}
 
 <div class="form-group">
     <label for="">Horas esperado</label>
@@ -30,5 +30,6 @@
 
 <div class="form-group">
     <label for="">Sprint</label>
-    {{ Form::text('sprint', null, array('class' => 'form-control')) }}
+    {{--{{ Form::text('sprint', null, array('class' => 'form-control')) }}--}}
+    {{ Form::select('sprint', $sprints, null, array('class' => 'form-control')) }}
 </div>

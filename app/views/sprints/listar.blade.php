@@ -3,10 +3,10 @@
 
 @section('content')
     <div class="container">
-        <h1>Listado sprints ({{ $curso->titulo }})</h1>
+        <h1>Listado sprints ({{ $curso->nombre }})</h1>
 
         <p>
-            <a href="{{ route('crear_sprint', [$idTarea]) }}">Crear sprint</a>
+            <a href="{{ route('crear_sprint', [$curso->id]) }}">Crear sprint</a>
         </p>
 
         <p>
@@ -16,7 +16,7 @@
         <table class="table table-striped">
             <thead>
             <tr>
-                <th>Curso</th>
+                {{--<th>Curso</th>--}}
                 <th>Número</th>
                 <th>Fecha inicio</th>
                 <th>Fecha final</th>
@@ -27,12 +27,12 @@
             <tbody>
             @foreach($sprints AS $sprint)
                 <tr>
-                    <td>{{ $sprint->curso->nombre}}</td>
+                    {{--<td>{{ $sprint->curso->nombre}}</td>--}}
                     <td>{{ $sprint->numero }}</td>
                     <td>{{ $sprint->fecha_inicio }}</td>
                     <td>{{ $sprint->fecha_final }}</td>
                     <td><a href="{{ route('actualizar_sprint', $sprint->id) }}">Editar</a></td>
-                    <td><a href="{{ route('tareas', $sprint->id) }}">Ver</a></td>
+                    <td><a href="{{ route('tareas', $sprint->id) }}">Tareas</a></td>
                 </tr>
             @endforeach
             </tbody>

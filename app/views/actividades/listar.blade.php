@@ -6,11 +6,11 @@
         <h1>Listado actividades</h1>
 
         <p>
-            <a href="{{ route('crear_actividad', [$idTarea]) }}">Crear actividad</a>
+            <a href="{{ route('crear_actividad', $tarea->id) }}">Crear actividad</a>
         </p>
 
         <p>
-            <a href="{{ route('tareas') }}">Volver</a>
+            <a href="{{ route('tareas', $tarea->id) }}">Volver</a>
         </p>
 
         <table class="table table-striped">
