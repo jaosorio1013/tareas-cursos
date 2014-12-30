@@ -7,16 +7,16 @@ Route::get('cursos/crear', ['as' => 'crear_curso', 'uses' => 'CursosController@f
 Route::post('cursos/crear/', ['as' => 'crear_curso', 'uses' => 'CursosController@crear']);
 Route::get('cursos/actualizar/{id}', ['as' => 'actualizar_curso', 'uses' => 'CursosController@formularioActualizar']);
 Route::put('cursos/actualizar/{id}', ['as' => 'actualizar_curso', 'uses' => 'CursosController@actualizar']);
-Route::get('cursos/agregar-tarea/{id}', ['as' => 'agregar_tarea_curso', 'uses' => 'CursosController@formularioagregarTarea']);
-Route::put('cursos/agregar-tarea/{id}', ['as' => 'agregar_tarea_curso', 'uses' => 'CursosController@agregarTarea']);
+Route::get('cursos/asignar-tareas/{id}', ['as' => 'asignar_tareas_curso', 'uses' => 'CursosController@formularioAsignarTarea']);
+Route::put('cursos/asignar-tareas/{id}', ['as' => 'asignar_tareas_curso', 'uses' => 'CursosController@asignarTarea']);
 
 Route::get('sprints', ['as' => 'sprints', 'uses' => 'SprintsController@listar']);
 Route::get('sprints/crear', ['as' => 'crear_sprint', 'uses' => 'SprintsController@formularioCrear']);
 Route::post('sprints/crear', ['as' => 'crear_sprint', 'uses' => 'SprintsController@crear']);
 Route::get('sprints/actualizar/{id}', ['as' => 'actualizar_sprint', 'uses' => 'SprintsController@formularioActualizar']);
 Route::put('sprints/actualizar/{id}', ['as' => 'actualizar_sprint', 'uses' => 'SprintsController@actualizar']);
-Route::get('sprints/agregar-tarea/{id}', ['as' => 'agregar_tarea_sprint', 'uses' => 'SprintsController@formularioagregarTarea']);
-Route::put('sprints/agregar-tarea/{id}', ['as' => 'agregar_tarea_sprint', 'uses' => 'SprintsController@agregarTarea']);
+Route::get('sprints/asignar-tareas/{id}', ['as' => 'asignar_tareas_sprint', 'uses' => 'SprintsController@formularioAsignarTarea']);
+Route::put('sprints/asignar-tareas/{id}', ['as' => 'asignar_tareas_sprint', 'uses' => 'SprintsController@asignarTarea']);
 
 Route::get('tareas', ['as' => 'tareas', 'uses' => 'TareasController@listarTodo']);
 Route::get('tareas/sprint/{idSprint}', ['as' => 'tareas_sprint', 'uses' => 'TareasController@listarPorSprint']);

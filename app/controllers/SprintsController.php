@@ -37,18 +37,18 @@ class SprintsController extends BaseController {
 		return Redirect::to('sprints');
 	}
 
-	public function formularioagregarTarea($idSprint)
+	public function formularioAsignarTarea($idSprint)
 	{
 		$tareas = Tarea::where('sprint_id', 0)->get();
 		$sprint = Sprint::find($idSprint);
 
-		return View::make('sprints/agregar-tareas', compact('tareas', 'sprint'));
+		return View::make('sprints/asignar-tareas', compact('tareas', 'sprint'));
 	}
 
-	public function agregarTarea($idSprint)
+	public function asignarTarea($idSprint)
 	{
 		dd(Input::all());
-		return Redirect::to("sprints/agregar-tarea/{$idSprint}");
+		return Redirect::to("sprints/asignar-tarea/{$idSprint}");
 	}
 
 }
