@@ -37,15 +37,15 @@ class CursosController extends BaseController {
 		return Redirect::to('cursos');
 	}
 
-	public function formularioAsignarTarea($idCurso)
+	public function formularioAsignarTareas($idCurso)
 	{
-		$tareas = Tarea::where('sprint_id', 0)->get();
-		$curso = Sprint::find($idCurso);
+		$tareas = Tarea::where('sprint_id', 1)->get();
+		$curso = Curso::find($idCurso);
 
 		return View::make('cursos/asignar-tareas', compact('tareas', 'curso'));
 	}
 
-	public function asignarTarea($idCurso)
+	public function asignarTareas($idCurso)
 	{
 		dd(Input::all());
 		return Redirect::to("cursos/asignar-tarea/{$idCurso}");
