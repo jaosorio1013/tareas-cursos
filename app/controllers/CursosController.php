@@ -39,7 +39,7 @@ class CursosController extends BaseController {
 
 	public function formularioAsignarTareas($idCurso)
 	{
-		$tareas = Tarea::where('sprint_id', 1)->get();
+		$tareas = Tarea::where('curso_id', 1)->get();
 		$curso = Curso::find($idCurso);
 
 		return View::make('cursos/asignar-tareas', compact('tareas', 'curso'));

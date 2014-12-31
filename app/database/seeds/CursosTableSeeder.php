@@ -7,6 +7,8 @@ class CursosTableSeeder extends Seeder {
 
 	public function run()
 	{
+		Curso::create(['nombre' => 'Curso no asinado']);
+
 		$faker = Faker::create();
 
 		foreach(range(1, 10) as $index)
