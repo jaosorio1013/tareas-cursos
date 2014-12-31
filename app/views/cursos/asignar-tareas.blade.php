@@ -5,7 +5,7 @@
     <div class="container">
         <h1>Asignar tareas al Curso ({{ $curso->nombre }})</h1>
 
-        {{ Form::open(['route' => ['asignar_tareas_sprint', $curso->id], 'method' => 'PUT', 'role' => 'form', 'novalidate']) }}
+        {{ Form::open(['route' => ['asignar_tareas_curso', $curso->id], 'method' => 'PUT', 'role' => 'form', 'novalidate']) }}
         <table class="table table-striped">
             <thead>
             <tr>

@@ -47,8 +47,16 @@ class SprintsController extends BaseController {
 
 	public function asignarTareas($idSprint)
 	{
-		dd(Input::all());
-		return Redirect::to("sprints/asignar-tarea/{$idSprint}");
+		$tareasId = Input::only('tarea_id');
+
+		foreach($tareasId['tarea_id'] AS $idTarea)
+		{
+			$tarea = Tarea::find($idTarea);
+			$tarea->sprint_id = $idSprint;
+			$tarea->save();
+		}
+
+		return Redirect::to("sprints/asignar-tareas/{$idSprint}");
 	}
 
 }

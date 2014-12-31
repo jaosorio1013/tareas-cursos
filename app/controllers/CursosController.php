@@ -47,8 +47,16 @@ class CursosController extends BaseController {
 
 	public function asignarTareas($idCurso)
 	{
-		dd(Input::all());
-		return Redirect::to("cursos/asignar-tarea/{$idCurso}");
+		$tareasId = Input::only('tarea_id');
+
+		foreach($tareasId['tarea_id'] AS $idTarea)
+		{
+			$tarea = Tarea::find($idTarea);
+			$tarea->curso_id = $idCurso;
+			$tarea->save();
+		}
+
+		return Redirect::to("cursos/asignar-tareas/{$idCurso}");
 	}
 
 }
