@@ -26,7 +26,10 @@
                     <td>{{ $sprint->fecha_inicio }}</td>
                     <td>{{ $sprint->fecha_final }}</td>
                     <td><a href="{{ route('actualizar_sprint', $sprint->id) }}">Editar</a></td>
-                    <td><a href="{{ route('tareas_sprint', $sprint->id) }}">Tareas</a></td>
+                    <td>
+                        <a href="{{ route('tareas_sprint', $sprint->id) }}">Lista tareas</a> |
+                        <a href="{{ route('asignar_tareas_sprint', $sprint->id) }}">Asignar tareas</a>
+                    </td>
                 </tr>
             @endforeach
             </tbody>

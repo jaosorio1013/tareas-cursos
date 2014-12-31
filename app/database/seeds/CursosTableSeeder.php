@@ -9,14 +9,14 @@ class CursosTableSeeder extends Seeder {
 	{
 		Curso::create(['nombre' => 'Curso no asinado']);
 
-		$faker = Faker::create();
+		/*$faker = Faker::create();
 
 		foreach(range(1, 10) as $index)
 		{
 			Curso::create([
 				'nombre' => $faker->name,
 			]);
-		}
+		}*/
 	}
 
 }

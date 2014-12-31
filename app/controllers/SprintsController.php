@@ -4,7 +4,7 @@ class SprintsController extends BaseController {
 
 	public function listar()
 	{
-		$sprints = Sprint::all();
+		$sprints = Sprint::where('id', '>', '1')->get();
 		return View::make('sprints/listar', compact('sprints'));
 	}
 

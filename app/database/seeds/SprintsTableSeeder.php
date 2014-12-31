@@ -9,7 +9,7 @@ class SprintsTableSeeder extends Seeder {
 	{
 		Sprint::create(['numero' => 0]);
 
-		$faker = Faker::create();
+		/*$faker = Faker::create();
 
 		foreach(range(1, 10) as $index)
 		{
@@ -18,7 +18,7 @@ class SprintsTableSeeder extends Seeder {
 				'fecha_inicio' => $faker->dateTime(),
 				'fecha_final' => $faker->dateTime(),
 			]);
-		}
+		}*/
 	}
 
 }
