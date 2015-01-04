@@ -28,7 +28,7 @@
         </table>
 
         <div class="form-group">
-            <input type="submit" class="btn btn-success" value="Crear tarea"/>
+            <input type="submit" class="btn btn-success" value="Asignar tareas"/>
         </div>
         {{ Form::close() }}
     </div>
