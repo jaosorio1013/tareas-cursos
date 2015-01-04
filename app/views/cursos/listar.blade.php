@@ -23,8 +23,8 @@
                     <td>{{ $curso->nombre }}</td>
                     <td><a href="{{ route('actualizar_curso', $curso->id) }}">Editar</a></td>
                     <td>
-                        <a href="{{ route('tareas_curso', $curso->id) }}">Lista tareas</a> |
-                        <a href="{{ route('asignar_tareas_curso', $curso->id) }}">Asignar tareas</a>
+                        <a href="{{ route('tareas_curso', $curso->id) }}">Lista tareas</a>
+                        {{--<a href="{{ route('asignar_tareas_curso', $curso->id) }}">Asignar tareas</a>--}}
                     </td>
                 </tr>
             @endforeach

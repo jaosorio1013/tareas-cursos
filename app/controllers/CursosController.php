@@ -4,7 +4,7 @@ class CursosController extends BaseController {
 
 	public function listar()
 	{
-		$cursos = Curso::where('id', '>', '1')->get();
+		$cursos = Curso::all();
 		return View::make('cursos/listar', compact('cursos'));
 	}
 

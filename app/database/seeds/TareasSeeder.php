@@ -11,7 +11,7 @@ class TareasSeeder extends Seeder {
 
 		foreach($sprints AS $sprint)
 		{
-			foreach(range(1, 10) as $index)
+			foreach(range(1, 80) as $index)
 			{
 				Tarea::create([
 					'prioridad' => $faker->randomElement([1, 2, 3, 4, 5]),
