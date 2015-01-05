@@ -6,6 +6,7 @@
     <thead>
     <tr>
         <th>Prioridad</th>
+        <th>Estado</th>
         <th>Titulo</th>
         <th>Curso</th>
         <th>Sprint</th>
@@ -15,8 +16,9 @@
     </thead>
     <tbody>
     @foreach($tareas AS $tarea)
-        <tr style="background: {{ $tarea->color }}">
+        <tr style="background: {{ $tarea->color }};">
             <td>{{ $tarea->prioridad }}</td>
+            <td>{{ $tarea->estado }}</td>
             <td><a href="{{ route('actualizar_tarea', [$tarea->id]) }}">{{ $tarea->titulo }}</a></td>
             <td>{{ $tarea->curso->nombre }}</td>
             <td>{{ $tarea->sprint->numero }}</td>

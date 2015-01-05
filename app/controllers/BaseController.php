@@ -19,18 +19,36 @@ class BaseController extends Controller {
 	{
 		$arrayColores = [
 			'Sin iniciar' => '#f2f2f2',
-			'Investigación' => '#ff555e',
-			'Guión' => '#f9ce99',
-			'Grabación' => '#fef8b8',
-			'Edición' => '#b75375',
-			'Programando' => '#c4c4c4',
-			'Correcciones' => '#4597c9',
-			'Finalización' => '#43b4a0',
-			'Aprobado' => '#e2ea95',
-			'Subido' => '#58a727'
+			'Investigación' => '#fdd700',
+			'Guión' => '#f7d609',
+			'Grabación' => '#e9d31a',
+			'Edición' => '#dad025',
+			'Programando' => '#cbcc2c',
+			'Correcciones' => '#bbc932',
+			'Finalización' => '#aac438',
+			'Aprobado' => '#95bf3d',
+			'Subido' => '#8bbe3f'
 		];
 
 		return $arrayColores[$estado];
+	}
+
+	protected function detallesListaTarea($tareas)
+	{
+		foreach($tareas AS $tarea)
+		{
+			$ultimaActividad = Actividad::where('tarea_id', $tarea->id)->orderBy('updated_at', 'DESC')->first();
+
+			$tarea->color = '#f2f2f2';
+			$tarea->estado = 'Sin iniciar';
+			if($ultimaActividad)
+			{
+				$tarea->color = $this->asignarColorSegunEstado($ultimaActividad->estado);
+				$tarea->estado = $ultimaActividad->estado;
+			}
+		}
+
+		return $tareas;
 	}
 
 }

@@ -20,7 +20,10 @@ class ActividadesTableSeeder extends Seeder {
 					'quien' => $faker->randomElement(['Victor', 'Sandra', 'Diego']),
 					'cuando' => $faker->dateTime(),
 					'cuanto' => $faker->randomElement([1, 2, 3, 4, 5]),
-					'estado' => $faker->randomElement(['Sin iniciar', 'Edición', 'Finalización']),
+					'estado' => $faker->randomElement(['Sin iniciar',  'Investigación',
+						'Guión',  'Grabación',  'Edición',
+						'Programando',  'Correcciones',
+						'Finalización',  'Aprobado',  'Subido']),
 					'tarea_id' => $tarea->id,
 				]);
 			}

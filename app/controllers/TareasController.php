@@ -19,6 +19,8 @@ class TareasController extends BaseController {
 	public function listarTodo()
 	{
 		$tareas = Tarea::all();
+		$tareas = $this->detallesListaTarea($tareas);
+
 		return View::make('tareas/listar-todo', compact('tareas'));
 	}
 
