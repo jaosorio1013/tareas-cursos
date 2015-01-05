@@ -6,7 +6,9 @@
 <div class="form-group">
     <label for="">Quíen</label>
     {{ Form::select('quien', ['Victor' => 'Victor', 'Sandra' => 'Sandra',
-        'Diego' => 'Diego', 'Silvana' => 'Silvana', 'Jeff' => 'Jeff'],
+        'Silvana' => 'Silvana', 'Jeff' => 'Jeff', 'Catalina' => 'Catalina',
+         'Cristian' => 'Cristian', 'Sebastian' => 'Sebastian', 'Israel' => 'Israel',
+         'Gustabo' => 'Gustabo', 'Jhonatan' => 'Jhonatan', 'Julio' => 'Julio',],
         null, array('class' => 'form-control')) }}
 </div>
 
@@ -29,6 +31,7 @@
     <label for="">Estado</label>
     {{ Form::select('estado', ['Sin iniciar' => 'Sin iniciar', 'Investigación' => 'Investigación',
         'Guión' => 'Guión', 'Grabación' => 'Grabación', 'Edición' => 'Edición',
-        'Correcciones' => 'Correcciones', 'Finalización' => 'Finalización'],
+        'Programando' => 'Programando', 'Correcciones' => 'Correcciones',
+        'Finalización' => 'Finalización', 'Aprobado' => 'Aprobado', 'Subido' => 'Subido'],
         null, array('class' => 'form-control')) }}
 </div>
