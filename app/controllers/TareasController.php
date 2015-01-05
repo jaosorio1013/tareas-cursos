@@ -4,15 +4,19 @@ class TareasController extends BaseController {
 
 	public function listarPorSprint($idSprint)
 	{
-		$tareas = Tarea::where('sprint_id', $idSprint)->get();
 		$sprint = Sprint::find($idSprint);
+		$tareas = Tarea::where('sprint_id', $idSprint)->get();
+		$tareas = $this->detallesListaTarea($tareas);
+
 		return View::make('tareas/listar', compact('tareas', 'sprint'));
 	}
 
 	public function listarPorCurso($idCurso)
 	{
-		$tareas = Tarea::where('curso_id', $idCurso)->get();
 		$curso = Curso::find($idCurso);
+		$tareas = Tarea::where('curso_id', $idCurso)->get();
+		$tareas = $this->detallesListaTarea($tareas);
+
 		return View::make('tareas/listar', compact('tareas', 'curso'));
 	}
 
