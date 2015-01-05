@@ -15,7 +15,7 @@
     </thead>
     <tbody>
     @foreach($tareas AS $tarea)
-        <tr>
+        <tr style="background: {{ $tarea->color }}">
             <td>{{ $tarea->prioridad }}</td>
             <td><a href="{{ route('actualizar_tarea', [$tarea->id]) }}">{{ $tarea->titulo }}</a></td>
             <td>{{ $tarea->curso->nombre }}</td>
