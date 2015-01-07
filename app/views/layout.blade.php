@@ -108,7 +108,7 @@
 <script type="text/javascript">
     $('.form_datetime').datetimepicker({
         language:  'es',
-        format: 'yyyy/mm/dd hh:mm:ss',
+        format: 'yyyy/mm/dd hh:ii:ss',
         todayBtn:  1,
         autoclose: 1,
         pickerPosition: "bottom-left"
