@@ -10,7 +10,7 @@
         </p>
 
         <p>
-            <a href="{{ URL::previous() }}">Volver</a>
+            <a href="#" onclick="volver()">Volver</a>
         </p>
 
         <table class="table table-striped">

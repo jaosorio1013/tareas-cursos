@@ -113,6 +113,11 @@
         autoclose: 1,
         pickerPosition: "bottom-left"
     });
+
+    function volver()
+    {
+        window.history.back();
+    }
 </script>
 </body>
 </html>

@@ -21,7 +21,7 @@
         {{ Form::close() }}
 
         <p>
-            <a href="{{ URL::previous() }}" class="btn btn-danger">Volver</a>
+            <a href="#" onclick="volver()" class="btn btn-danger">Volver</a>
         </p>
     </div>
 @stop
