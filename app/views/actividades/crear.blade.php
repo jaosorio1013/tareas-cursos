@@ -16,7 +16,7 @@
 
 
         <p>
-            <a href="{{ route('actividades_tarea', $tarea->id) }}" class="btn btn-danger">Volver</a>
+            <a href="{{ URL::previous() }}" class="btn btn-danger">Volver</a>
             <a href="{{ route('tareas') }}" class="btn btn-default">Ver tareas</a>
         </p>
     </div>

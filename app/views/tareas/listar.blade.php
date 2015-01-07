@@ -9,6 +9,10 @@
             <h1>Listado de tareas (Curso: {{ $curso->nombre }})</h1>
         @endif
 
+        <p>
+            <a href="{{ URL::previous() }}">Volver</a>
+        </p>
+
         @include('tareas/tabla-listado')
     </div>
 @stop

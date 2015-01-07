@@ -10,7 +10,7 @@
         </p>
 
         <p>
-            <a href="{{ route('tareas', $tarea->id) }}">Volver</a>
+            <a href="{{ URL::previous() }}">Volver</a>
         </p>
 
         <table class="table table-striped">

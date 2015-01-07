@@ -15,7 +15,7 @@
         {{ Form::close() }}
 
         <p>
-            <a href="{{ route('sprints') }}" class="btn btn-danger">Volver</a>
+            <a href="{{ URL::previous() }}" class="btn btn-danger">Volver</a>
         </p>
     </div>
 @stop
