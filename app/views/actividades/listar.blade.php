@@ -10,7 +10,7 @@
         </p>
 
         <p>
-            <a href="#" onclick="volver()">Volver</a>
+            <a onclick="volver()" class="btn btn-danger">Volver</a>
         </p>
 
         <table class="table table-striped">

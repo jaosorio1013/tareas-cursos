@@ -15,7 +15,7 @@
         {{ Form::close() }}
 
         <p>
-            <a href="#" onclick="volver()" class="btn btn-danger">Volver</a>
+            <a onclick="volver()" class="btn btn-danger">Volver</a>
         </p>
     </div>
 @stop

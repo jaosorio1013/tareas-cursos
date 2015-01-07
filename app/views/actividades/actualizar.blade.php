@@ -21,7 +21,7 @@
         {{ Form::close() }}
 
         <p>
-            <a href="#" onclick="volver()" class="btn btn-danger">Volver</a>
+            <a onclick="volver()" class="btn btn-danger">Volver</a>
             <a href="{{ route('tareas') }}" class="btn btn-default">Ver tareas</a>
         </p>
     </div>
