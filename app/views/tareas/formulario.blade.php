@@ -4,6 +4,11 @@
 </div>
 
 <div class="form-group">
+    <label for="">Esfuerzo</label>
+    {{ Form::select('esfuerzo', $esfuerzo, null, array('class' => 'form-control')) }}
+</div>
+
+<div class="form-group">
     <label for="">Titulo</label>
     {{ Form::text('titulo', null, array('class' => 'form-control')) }}
 </div>

@@ -2,6 +2,17 @@
 
 class TareasController extends BaseController {
 
+	private $esfuerzo = [
+		1 => 1,
+		2 => 2,
+		3 => 3,
+		5 => 5,
+		8 => 8,
+		13 => 13,
+		21 => 21,
+		34 => 34,
+	];
+
 	public function listarPorSprint($idSprint)
 	{
 		$sprint = Sprint::find($idSprint);
@@ -32,7 +43,8 @@ class TareasController extends BaseController {
 	{
 		$cursos = Curso::lists('nombre', 'id');
 		$sprints = Sprint::lists('numero', 'id');
-		return View::make('tareas/crear', compact('sprints', 'cursos', 'sprints'));
+		$esfuerzo = $this->esfuerzo;
+		return View::make('tareas/crear', compact('sprints', 'cursos', 'sprints', 'esfuerzo'));
 	}
 
 	public function crear()
@@ -49,7 +61,8 @@ class TareasController extends BaseController {
 		$tarea = Tarea::find($idTarea);
 		$cursos = Curso::lists('nombre', 'id');
 		$sprints = Sprint::lists('numero', 'id');
-		return View::make('tareas/actualizar', compact('tarea', 'cursos', 'sprints'));
+		$esfuerzo = $this->esfuerzo;
+		return View::make('tareas/actualizar', compact('tarea', 'cursos', 'sprints', 'esfuerzo'));
 	}
 
 	public function actualizar($idTarea)
