@@ -8,7 +8,8 @@
     {{ Form::select('quien', ['Victor' => 'Victor', 'Sandra' => 'Sandra',
         'Silvana' => 'Silvana', 'Jeff' => 'Jeff', 'Catalina' => 'Catalina',
          'Cristian' => 'Cristian', 'Sebastian' => 'Sebastian', 'Israel' => 'Israel',
-         'Gustabo' => 'Gustabo', 'Jhonatan' => 'Jhonatan', 'Julio' => 'Julio',],
+         'Gustabo' => 'Gustabo', 'Jhonatan' => 'Jhonatan', 'Julio' => 'Julio',
+         'Juan David' => 'Juan David',],
         null, array('class' => 'form-control')) }}
 </div>
 
