@@ -18,8 +18,13 @@ class TareasController extends BaseController {
 		$sprint = Sprint::find($idSprint);
 		$tareas = Tarea::where('sprint_id', $idSprint)->get();
 		$tareas = $this->detallesListaTarea($tareas);
+		$esfuerzo = 0;
+		foreach($tareas AS $tarea)
+		{
+			$esfuerzo += $tarea->esfuerzo;
+		}
 
-		return View::make('tareas/listar', compact('tareas', 'sprint'));
+		return View::make('tareas/listar', compact('tareas', 'sprint', 'esfuerzo'));
 	}
 
 	public function listarPorCurso($idCurso)
@@ -27,8 +32,13 @@ class TareasController extends BaseController {
 		$curso = Curso::find($idCurso);
 		$tareas = Tarea::where('curso_id', $idCurso)->get();
 		$tareas = $this->detallesListaTarea($tareas);
+		$esfuerzo = 0;
+		foreach($tareas AS $tarea)
+		{
+			$esfuerzo += $tarea->esfuerzo;
+		}
 
-		return View::make('tareas/listar', compact('tareas', 'curso'));
+		return View::make('tareas/listar', compact('tareas', 'curso', 'esfuerzo'));
 	}
 
 	public function listarTodo()

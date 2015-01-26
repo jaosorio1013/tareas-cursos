@@ -2,6 +2,9 @@
     <a href="{{ route('crear_tarea') }}">Crear tarea</a>
 </p>
 
+@if(isset($esfuerzo))
+    <h2>Esfuerzo total: {{ $esfuerzo }}</h2>
+@endif
 <table class="table table-striped">
     <thead>
     <tr>
