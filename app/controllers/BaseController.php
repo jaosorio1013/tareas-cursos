@@ -24,8 +24,8 @@ class BaseController extends Controller {
 			'Grabación' => '#e9d31a',
 			'Edición' => '#dad025',
 			'Programando' => '#cbcc2c',
-			'Correcciones' => '#bbc932',
-			'Finalización' => '#aac438',
+			'Correcciones' => '#e2b7e2',
+			'Finalización' => '#bcd1d3',
 			'Aprobado' => '#95bf3d',
 			'Subido' => '#8bbe3f'
 		];
